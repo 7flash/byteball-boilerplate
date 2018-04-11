@@ -19,5 +19,5 @@ eventBus.on("text", (from, text) => {
 });
 
 function reply(recipient, message, subject = "") {
-	device.sendMessageToDevice(recipient, subject, message);
+	device.sendMessageToDevice(recipient, "text", message);
 }
