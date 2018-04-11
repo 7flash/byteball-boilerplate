@@ -1,3 +1,6 @@
 {
-  "welcome": "Hello!"
+  "welcome": "Hello!",
+  "default": "Commands: /chapter1 /chapter2",
+  "/chapter1": "First chapter",
+  "/chapter2": "Second chapter"
 }

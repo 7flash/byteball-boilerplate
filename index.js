@@ -11,13 +11,15 @@ eventBus.once("headless_wallet_ready", () => {
 });
 
 eventBus.on("paired", (from) => {
-	reply(from, messages.welcome, "Welcome");
+	reply(from, messages.welcome);
 });
 
 eventBus.on("text", (from, text) => {
-	reply(from, text);
+	const response = messages[text] || messages["default"];
+
+	reply(from, response);
 });
 
-function reply(recipient, message, subject = "") {
-	device.sendMessageToDevice(recipient, "text", message);
+function reply(recipient, message, subject = "text") {
+	device.sendMessageToDevice(recipient, subject, message);
 }
